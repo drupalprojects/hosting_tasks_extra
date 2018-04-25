@@ -1,0 +1,34 @@
+<?php
+/**
+ * @file
+ * Contains core functionality for the Hosting Reinstall module.
+ */
+
+/**
+ * Implements hook_hosting_tasks().
+ */
+function hosting_site_reinstall_hosting_tasks() {
+  $tasks = array();
+
+  $tasks['site']['reinstall'] = array(
+    'title' => t('Reinstall'),
+    'description' => t('Reinstall the site.'),
+    'dialog' => TRUE,
+  );
+
+  return $tasks;
+}
+
+/**
+ * Implements hook_form().
+ */
+function hosting_task_reinstall_form($node) {
+  $form = array();
+
+  $form['warning'] = array(
+    '#markup' => t('Warning: All site data will be LOST!'),
+    '#type' => 'item',
+  );
+
+  return $form;
+}

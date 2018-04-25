@@ -1,0 +1,5 @@
+name = Hosting Reinstall
+description = Provides a Hosting task to reinstall sites.
+package = Hosting Development Tools
+dependencies[] = hosting_site
+core = 7.x
